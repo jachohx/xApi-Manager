@@ -37,7 +37,10 @@ class IndexController extends Controller
     
     }
     public function index(Request $request){
-        
+        return view('index', []);
+    }
+
+    public function stat(Request $request){
         $data = array();
         $colors = array('progress-bar-primary','progress-bar-info',
         'progress-bar-success','progress-bar-warning','progress-bar-danger');
@@ -50,7 +53,7 @@ class IndexController extends Controller
                 'ratio'=> rand(20,60)
             );
         }
-        return view('index', ['data'=>$data]);
+        return view('stat', ['data'=>$data]);
     }
     /**
      * 请求Api城市请求统计量

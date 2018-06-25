@@ -8,6 +8,7 @@
 //首页
 Route::group(['middleware'=>'isAuth'], function(){
     Route::get('/', ['as'=>'home', 'uses'=>'IndexController@index']);
+    Route::get('Index/stat', ['as'=>'Index.stat', 'uses'=>'IndexController@stat']);
     Route::get('Index/index', ['as'=>'Index.index', 'uses'=>'IndexController@index']);
 	Route::get('Index/area', ['as'=>'Index.area', 'uses'=>'IndexController@area']);
 	Route::get('Cache/index', ['as'=>'cache.index', 'uses'=>'CacheController@index']);
